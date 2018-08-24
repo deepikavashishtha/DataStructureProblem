@@ -1,0 +1,61 @@
+Quick Sort
+-----------------
+6 5 3 1 8 7 2 4 
+
+Quicksort is a comparison-based algorithm that uses divide-and-conquer to sort an array. The algorithm picks a pivot element, , and then rearranges the array into two subarrays , such that all elements are less than , and , such that all elements are greater than or equal to .
+
+
+Divide : Pick the pivot, Partition and rearrange
+//For picking up the pivot, Lets assume that last element of first array is pivot [Or element at (mid -1) position is pivot]
+
+quick_rearrange(int[] arr, int start, int length)
+{
+	if(length <= 1)
+		return;
+	int mid  = length / 2;
+	int pivot = start + mid -1;
+	int i = start;
+	int j = start + length -1
+	while(i < j && i != pivot and j != pivot)
+	{
+		if(arr[i] > arr[j])	
+		{
+			int temp = arr[j];
+			arr[j] = arr[i];
+			arr[i ] = temp;	
+		}
+		i++; j--;
+	}
+
+	
+}
+
+Conquer : Call recursively
+
+quick_sort(arr)
+
+Combine : No need to do anything
+
+
+One more implementation
+--------------------------------------------------------------------------------------------------------
+3 lists need to be mentained: For less, more and pivot and then call quicksort in each list
+--------------------------------------------------------------------------------------------------------
+def quickSort(arr):
+    less = []
+    pivotList = []
+    more = []
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        for i in arr:
+            if i < pivot:
+                less.append(i)
+            elif i > pivot:
+                more.append(i)
+            else:
+                pivotList.append(i)
+        less = quickSort(less)
+        more = quickSort(more)
+        return less + pivotList + more

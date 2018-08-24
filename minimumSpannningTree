@@ -1,0 +1,35 @@
+Class Node{
+	String id, 
+	List<Edge> edges;
+}
+
+Class Edge
+{
+	Node node;
+	int wight;
+}
+
+Class ResultNode
+{
+	String id;
+	Edge edge;	
+}
+
+Set<ResultNode> resultMst;
+
+public mst(Node node)
+{	
+	String currentNodeId = node.id;
+	if(resultMst.contains(currentNodeId))
+	{
+		return;	
+	}
+	if(node.edges.size() > 0)
+	{
+		minimumEdge = findMinimumEdge(edges);
+	}
+	ResultNode resultNode = new ResultNode(currentNodeId, minimumEdge);
+	resultMst.add(resultNode) ;
+	mst(resultEdge.getNode())
+}
+

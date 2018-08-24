@@ -1,0 +1,52 @@
+Two String and check wheher they both are equivalent by performing some operations on both String
+
+abcd and cdab
+
+cdab
+//Try odd swaps first
+adcb
+//no mroe odd swaps are possible
+//try even swaps
+
+cbad
+//no more even swaps are possible
+
+abcd
+
+public Class WordCompare{
+	String firstword = "abcd";
+	String secondword = "abcd";
+
+	public boolean findEquivalent()
+	{
+		//null check
+		// length check
+		return swap(secondword, even, 0);
+	}
+
+	public boolean swap(final String word, final int currentIndex)
+	{
+		if(isEqual(firstword, word) return true;
+		//swap odd and compare else swap odd again
+		if(isEqual(firstword, swapOperation(word, curretnIndex))) return true;
+		else { swap(swapOperation(word, curretnIndex), currentIndex +2)}
+		//swap even and compare else swap even again
+		if(isEqual(firstword, swapOperation(word, curretnIndex+1))) return true;
+		else { swap(swapOperation(word, curretnIndex + 1), currentIndex +3)}
+	}
+
+	public String swapOperation(String word, int currentIndex){
+		return swapcharat(currentIndex, currentIndex + 2);
+	}
+}
+
+//Just for refernece  to understand dfs in solution of this problem
+dfs(Node node)
+{
+	if(node == null) return;
+	visit(node);
+	for(node.getChildren())
+	{
+		dfs(currentChildNode);
+	}
+}

@@ -1,0 +1,43 @@
+
+int generateFibonacci(int n){
+	
+	
+}
+
+
+
+
+f(n+2) = f(n+1) + f(n)
+
+int f(int n) {
+	if(n==1 || n==0)
+	{ 
+		return 1
+	}
+	return f(n-1) +f(n-2);
+
+
+int index1 = 1;
+bigInteger result = 1
+bigInteger result1 = 0
+bigInteger result2 = 0
+while(true)
+{
+	if(index == 1)
+		{result = 1  , result1 = 0, result2 = 0}
+	else if(index == 2)
+		{result = 1 , result1 = 1, result2 = 0}
+	else
+		{result = result1 + result2;}
+	result1 = result;
+	result2 = result1;
+	if(result/(power(10,1000)-1) > 1)
+	{break;}
+	index++;
+}
+
+
+
+
+
+

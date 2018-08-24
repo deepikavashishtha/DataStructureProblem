@@ -1,0 +1,46 @@
+Merge Sort
+6 5 3 1 8 7 2 4 
+
+//Consider unsorted array size will grow double and need to merge these unsorted arrays. Lets call unsorted array size as n : 2  4  8
+
+//this method will merge 2 sorted array
+public void merge(int[] arr, int i, int j, int n)
+{
+	if(i < j)
+	{
+		for(int index = 0; index < n; index ++)
+		{
+			if(arr[i + index] > arr[j + index])
+			{
+				int temp = arr[i + index];
+				arr[i + index] = arr[j + index];
+				arr[j + index] = temp;
+			}
+		}
+	}
+}
+
+//splitting unsorted array into unsorted array
+//split
+//merge
+
+merge_sort(int[] arr, int indexStart, int length )
+{
+	if(length <= 1)
+	{ 
+		return arr;
+	}
+	int mid = length/2;
+	if(mid > 1)
+	{
+		merge_sort(arr, indexStart, mid )  
+		merge_sort(arr, indexStart + mid, mid)
+		return merge(arr, indexStart, indexStart + mid, mid)
+	}
+}
+
+
+
+
+
+

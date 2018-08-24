@@ -1,0 +1,105 @@
+MaxHeap
+------------------
+//Test scenarios: elements given [12, 5, 3, 8, 10, 7, 2, 9]
+12 10 7 9 8 3 2 
+//Considering Array implementation here, But can be implemented by using Java Heap node classes as well.
+//Standards: If i the node index then
+// Left Child: 2*i
+// Right Child: 2*i + 1
+// Parent : i/2
+//Build Heap
+//build heap node by node here
+public void build_heap(int[] arr, int index)
+{
+	// if index is 0 then return; 1st node of the heap
+	int currentNode = arr[index];
+	int parentNode = arr[index/2];
+	if(index%2 == 0) //introducing a left node 
+	{
+		if(parent < currentNode)
+		{
+			swap(arr[index], arr[index/2]);
+			buildheap(arr, index/2);
+		}
+		else
+		{ return ;}
+	}
+	else //introducing a right node{
+		int leftNode = arr[index -1];
+		if(parent < currentNode && leftNode < currentNode)
+		{
+			swap(arr[index], arr[index/2]);
+			buildheap(arr, index/2);
+		}
+		else return;
+		// not sure possible or not, so leave it for now.
+		else if(parent < currentNode && leftNode > currentNode)
+		{
+		
+		}
+	}
+}
+// Intializing the heap by calling build_heap element by element here
+pulic void init()
+{
+	for(int i =0 ; i < arr.length; i++)
+	{
+		build_heap(arr, i);
+	}
+}
+
+
+
+//Restructure in a heap, Also called heapify
+//top to down approach , when a element is inserted at top and comparing with its children, swap if needed.
+public void rehealify(int[] arr, int index)
+{
+	int currentNode = arr[index];
+	int leftChild = arr[2*index];
+	int rightChild = arr[2*index + 1];
+	if(currentNode > leftChild && currentNode > rightChild)
+		return; //do nothing
+	else if(leftNode > rightNode)
+	{
+		swap(arr[index], arr[2*index]);
+		reheapify(arr, 2*index);
+	}
+	else if(leftNode < rightNode)
+	{
+		swap(arr[index], arr[2*index + 1]);
+		reheapify(arr, 2*index + 1);
+	}
+}
+
+//Add in a heap: Adding an element in a heap: Add the new element at the end of the heap and traverse though bottom to top to get the correct place in a tree
+public void add(int[] arr, int element)
+{
+	int currentIndex = last_position_in_the_array;
+	arr[curentIndex] = element;
+	buildHeap(arr, currentIndex);
+	 
+}
+
+//delete from a heap: To delete an element in an array, delete the element and replace it with last element. And then reheapify the heap.
+public int delete(int[] arr, int index) { 
+	int element_to_be_dleted = arr[index];
+	int currentIndex = last_position_in_the_array;
+	int leaf_Object = arr[currentIndex];
+	arr[index] = leaf_oject;
+	reheapify(arr, index);
+	return element_to_be_dleted;
+}
+
+
+//heap sort : First Build a max heap from elemnts given. Then remove the root object and rehepify
+public int[] heap_sort(int[] arr)
+{
+	int[] sortedArr = new int[10];
+	init();
+	for(int i=0; i < n ; i++)
+	{
+	sortArr[i] = delete(arr, 0);
+	}
+	return sortedArr;
+}
+

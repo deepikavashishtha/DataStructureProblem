@@ -1,0 +1,37 @@
+//Assumption digits are kept in sorted order in digit array
+
+printPermutation()
+{
+	int[] digits = {0,1,2,3,4,5,6,7,8,9};
+	int n = 10,00,000; 
+	Sytem.out.println(getNthPermutation(digits, n))
+}
+
+
+int getNthPermutation(ArrayList<int> digits, int n)
+{
+	long possiblePermutation = 1;
+	for(int i = 1; i <= digits.length; i++)
+	{
+		possiblePermutation = getPossilePermutation(i);
+		if(n > possiblePermutation)
+		{ break;}
+	}
+	int upperLimit = i;
+	result = result + digits.get[upperLimit - 1]*power(10,upperLimit - 1)  + getNthPermutation(digits.remove(upperLimit - 1), (n - getPossilePermutation(i - 1))); 
+}
+
+long getPossilePermutation(int candidate)
+{
+	long result = 1;
+	for(int i = candidate; i > 0; i--  )
+	{
+		result = result * candidate;	
+	}
+	return result;
+}
+
+
+
+0 1 2 3 4 5 6 7 8 9
+0 2 3 4 5 6 7 8 9 1

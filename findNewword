@@ -1,0 +1,33 @@
+//Given a word and find out whether word can be broken ino smaller words by removing 1 alfabet at a time
+sun
+un
+n
+sn
+n
+su
+u
+
+
+string[] getSmallerWords(String word)
+{
+	String[] newwords = new String[];
+	int length = word.length();
+	for (int i = 0; i < length -1; i++)
+	{
+		String currentWord = word.removeChatAt(i);
+		isDIctword(newwords, currentword);
+		for (int j = 0;  j < currentword.length; j++ ) 
+		{
+			String tempword = currentWord.removecharat(j++)	;
+			isDIctword(newwords, tempword);
+			currentword = tempword ;
+		}
+		
+	}
+}
+isDIctword(String[] newwords, String currentword)
+{
+	if(isDictWord(currentWord)) {
+		newwords.add(currentword);	
+	}
+}

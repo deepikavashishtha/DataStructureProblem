@@ -1,0 +1,56 @@
+Binary Trees
+--------------------
+//Simple node of a binary tree
+public class Node {
+	int id;
+	Node left;
+	Node right;
+	boolean isRed; //we can use this property if we have a red-black tree
+	Node parent; //you can have this property if you want to have a tree which is doublly linked, And preferrred because of easy traversal.
+
+//suppose we have a constructor and getter and setter here .
+}
+
+//inserting in a BST
+public Node insert(Node currentNode, int value)
+{
+	if(value == currentNode.value)
+	{
+		return currentNode; //	no need to insert , node alrwady exists in the tree
+	}
+	else if (value < currentNode.value)
+	{
+		if ( currentNode.left == null)
+		{
+			//create a node
+			Node newNode = new Node(value, null, null, currentNode);
+			currentNode.setLeft(newNode);
+			return newNode;
+		}	
+		else{
+			insert(currentNode.left, value);
+		}
+	}
+	else if (value > currentNode.value)
+	{
+		if ( currentNode.right == null)
+		{
+			//create a node
+			Node newNode = new Node(value, null, null, currentNode);
+			currentNode.setRight(newNode);
+			return newNode;
+		}	
+		else{
+			insert(currentNode.right, value);
+		}
+	}
+}
+
+
+//Left rotation
+//Supppose we are getting a node from which point we want to rotate 
+public void leftRotate(Node b)
+{
+	Node parent = b.parent();
+}
+

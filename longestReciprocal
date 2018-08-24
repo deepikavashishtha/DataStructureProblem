@@ -1,0 +1,16 @@
+Longest Reciprocal
+------------------------
+
+int getMaxReciprocalCycle(int maxNum)
+{
+	int longestLength = 1;
+	String reciprocalString = "1";
+	for(int num=1; num < maxNum; num++)
+	{
+		double decimalValue = 1/num;
+		reciprocalString = String.parseDouble(decimalValue);
+		if(longestLength < reciprocalString.length())
+			longestLength = reciprocalString.length();
+	}
+	return longestLength;
+}

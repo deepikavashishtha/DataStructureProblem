@@ -1,0 +1,44 @@
+public static void main(final String[] args){
+ArrayList<BigInteger> sortedDistinctPowers = new ArrayList<BigInteger>();
+List<BigINteger> bucket1 = new ArrayList<BigInteger>();
+List<BigINteger> bucket2 = new ArrayList<BigInteger>();
+List<BigINteger> bucket3 = new ArrayList<BigInteger>();
+List<BigINteger> bucket4 = new ArrayList<BigInteger>();
+List<BigINteger> bucket5 = new ArrayList<BigInteger>();
+List<BigINteger> bucket6 = new ArrayList<BigInteger>();
+List<BigINteger> bucket7 = new ArrayList<BigInteger>();
+List<BigINteger> bucket8 = new ArrayList<BigInteger>();
+List<BigINteger> bucket9 = new ArrayList<BigInteger>();
+List<BigINteger> bucket10 = new ArrayList<BigInteger>();
+
+int[] bucketMaxLimit = new int[];
+
+int minInt =2;
+int maxInt = 100;
+
+int minPower = 2;
+int maxPower = 100;
+
+fillMaxBucketLimit(bucketMaxLimit, minInt, maxInt, maxPower)
+
+	for(int index = minInt; index <= maxInt;  index++)
+	{
+		for(int powerIndex = minPower; powerIndex <= maxPower;  powerIndex++)
+		{
+			BigINterger currentNumber = power(index, powerIndex);
+			int bucketNumber = findBucket(currentNumber, bucketMaxLimit);
+			fillInBucket(bucketNumber, currentNumber);
+		}
+	}
+fillSortedDistinctPowers();
+}
+
+public void fillMaxBucketLimit(final int[] bucketMaxLimit, final int minInt, final int maxInt, final int maxPower)
+{
+	for(int index = minInt; index <= maxInt;  index++)
+	{
+		bucketMaxLimit[index] = power(index, maxPower)	;
+	}
+}
+
+
